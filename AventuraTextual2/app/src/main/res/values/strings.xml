@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AventuraTextual2</string>
+    <string name="noche_de_halloween">NOCHE DE HALLOWEEN</string>
+    <string name="supernenas_production">Supernenas Production</string>
+    <string name="imagen">IMAGEN</string>
+    <string name="fondo">FONDO</string>
+    <string name="cuadrotexto">CUADROTEXTO</string>
+    <string name="casa">CASA</string>
+    <string name="imagedre">IMAGEDRE</string>
+    <string name="si">SI</string>
+    <string name="no">NO</string>
+    <string name="jugar">Jugar</string>
+    <string name="salir">Salir</string>
+
+
+</resources>
