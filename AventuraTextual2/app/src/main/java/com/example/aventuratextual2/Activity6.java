@@ -98,17 +98,14 @@ public class Activity6 extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             }
+                            break;
 
                         case 5:
-                            if(decision == 0){
                                 //cambiar intent
                                 Intent intento = new Intent(Activity6.this, MainActivity2_Final.class);
                                                                 intento.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                                 startActivity(intento);
                                                                 finish();
-                            }
-
-
                     }
                 }
             }
