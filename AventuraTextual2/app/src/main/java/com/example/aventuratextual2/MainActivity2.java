@@ -86,11 +86,11 @@ public class MainActivity2 extends AppCompatActivity {
                         break;
                     case 5:
                         if(decision == 1){
-                            //Cuando Aitana termine su Activity descomentar este trozo de código
-                           // Intent intent = new Intent(MainActivity2.this, cementerio.class);
-                           // intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                           // startActivity(intent);
-                           // finish();
+                            //pasar a la siguiente activity
+                            Intent intent = new Intent(MainActivity2.this, cementerio.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                            finish();
 
                         } else if(decision == 0){
                             imagedre.setVisibility(View.INVISIBLE);

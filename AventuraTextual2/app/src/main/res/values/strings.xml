@@ -11,6 +11,12 @@
     <string name="no">NO</string>
     <string name="jugar">Jugar</string>
     <string name="salir">Salir</string>
+    <string name="buttonno">no</string>
+    <string name="fondo_negro">fondo negro</string>
+    <string name="beber">Beber</string>
+    <string name="movil">movil</string>
+    <string name="pasar">Pasar</string>
+    <string name="personaje">personaje</string>
 
 
 </resources>
