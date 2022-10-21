@@ -36,7 +36,7 @@ public class Activity6 extends AppCompatActivity {
         bno.setVisibility(Button.INVISIBLE);
         bsi.setVisibility(Button.INVISIBLE);
 
-        texto.setCharacterDelay(50); // Delay para la velocidad del texto
+        texto.setCharacterDelay(25); // Delay para la velocidad del texto
         fondo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

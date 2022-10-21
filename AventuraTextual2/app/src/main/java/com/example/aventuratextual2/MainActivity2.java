@@ -37,7 +37,7 @@ public class MainActivity2 extends AppCompatActivity {
         botonNo.setVisibility(View.INVISIBLE);
 
         Typewriter txtView2 = findViewById(R.id.type_textWriter);
-        txtView2.setCharacterDelay(50); //delay con el que se escriben los caracteres
+        txtView2.setCharacterDelay(25); //delay con el que se escriben los caracteres
 
         //Se crea un switch que va almacenando en un contador las veces que se pulsa la pantalla y según las veces que se pulse
         //reproduce un texto y la toma de decisiones
