@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,8 @@ public class cementerio extends AppCompatActivity {
         private ImageView fondo, cuadroTexto, personaje;
     //Botones
         private Button botonsi, botonno, botonbeber, botonmovil, botonsi1, botonno1;
+        //sonidos
+    MediaPlayer metal, xfile;
     //ints contadores/controladores
         private int contador = 0, escena = 0, contaux = 0, decision = 3;
     //Subidon
@@ -39,6 +42,9 @@ public class cementerio extends AppCompatActivity {
             cuadroTexto = (ImageView) findViewById(R.id.cuadrotexto);
             personaje = (ImageView) findViewById(R.id.personaje);
             personaje.setVisibility(View.INVISIBLE);
+        //Sonidos
+            metal = MediaPlayer.create(this,R.raw.metalefecto);
+            xfile = MediaPlayer.create(this,R.raw.xfiles);
         //Botones
             botonno = (Button) findViewById(R.id.buttonno);
             botonsi = (Button) findViewById(R.id.buttonsi);
@@ -118,16 +124,19 @@ public class cementerio extends AppCompatActivity {
                             break;
                         case 6:
                             personaje.setImageResource(R.drawable.naila);
+                            xfile.start();
                             break;
                         case 7:
                             personaje.setImageResource(R.drawable.quejicadre);
+                            if (xfile.isPlaying()){
+                                xfile.stop();
+                            }
                             break;
                         case 8:
                             pasar = false;
                             personaje.setImageResource(R.drawable.nailaechandolabronca);
                             botonno.setVisibility(View.VISIBLE);
                             botonsi.setVisibility(View.VISIBLE);
-
                             break;
                         case 9:
                             //aitana
@@ -158,14 +167,17 @@ public class cementerio extends AppCompatActivity {
                             personaje.setImageResource(R.drawable.dre);
                             break;
                         case 14:
-                            //fondo normal, añadir ruido
                             personaje.setVisibility(View.INVISIBLE);
                             fondo.setImageResource(R.drawable.cementerio2);
+                            metal.start();
                             break;
                         case 15:
                             //naila
                             personaje.setImageResource(R.drawable.happynaila);
                             personaje.setVisibility(View.VISIBLE);
+                            if (xfile.isPlaying()){
+                                xfile.stop();
+                            }
                             break;
                         case 16:
                             //xandre
@@ -247,7 +259,7 @@ public class cementerio extends AppCompatActivity {
                     }
                     //recoge el texto del array que contiene la historia (auxiliar) y lo imprime en pantalla
                     String text = aux.get(contador);
-                    texto.setCharacterDelay(50);
+                    texto.setCharacterDelay(25);
                     texto.animatedText(text);
                     //por defecto escena y contador van de la mano
                     escena++;
