@@ -17,6 +17,7 @@
     <string name="movil">movil</string>
     <string name="pasar">Pasar</string>
     <string name="personaje">personaje</string>
+<<<<<<< Updated upstream
     <string name="derecha" />
     <string name="izquierda">izquierda</string>
     <string name="mausoleo">mausoleo</string>
@@ -26,6 +27,16 @@
     <string name="pasadizocalaveras">pasadizocalaveras</string>
     <string name="abrir">ABRIR</string>
     <string name="cuevamarron">cuevamarron</string>
+=======
+    <string name="npc">npc</string>
+    <string name="derecha">derecha</string>
+    <string name="buena">Buena</string>
+    <string name="mala">mala</string>
+    <string name="no_beber">No beber</string>
+    <string name="xandre">Xandre</string>
+    <string name="naila">Naila</string>
+    <string name="aitana">Aitana</string>
+>>>>>>> Stashed changes
 
 
 </resources>

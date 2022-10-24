@@ -10,7 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.MediaController;
+<<<<<<< Updated upstream
 import android.widget.ProgressBar;
+=======
+>>>>>>> Stashed changes
 import android.widget.VideoView;
 
 import java.util.ArrayList;
@@ -29,11 +32,16 @@ public class InteriorMausoleo7 extends AppCompatActivity {
 
     private boolean pasar = true;
 
+<<<<<<< Updated upstream
     public static int subidon;
     public static int cordura;
 
     private ProgressBar subid;
     private ProgressBar cordur;
+=======
+    public static int subidon = 0;
+    public static int cordura = 100;
+>>>>>>> Stashed changes
 
     ArrayList <String> historia = new ArrayList<String>();
     ArrayList <String> cogerLibro = new ArrayList<String>();
@@ -49,6 +57,7 @@ public class InteriorMausoleo7 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interior_mausoleo7);
 
+<<<<<<< Updated upstream
         //Coger los valores de subidon y cordura del anterior activity
         Bundle extras = getIntent().getExtras();
         subidon = extras.getInt("subidon");
@@ -68,6 +77,13 @@ public class InteriorMausoleo7 extends AppCompatActivity {
         subid.setProgress(subidon);
         cordur.setProgress(cordura);
 
+=======
+        //Video
+        videoView = (VideoView) findViewById(R.id.videoView);
+        Uri uri = Uri.parse("android.resources://" + getPackageName() + "/" + R.raw.zuzto);
+        videoView.setVisibility(View.INVISIBLE);
+
+>>>>>>> Stashed changes
         //Imagenes
         fondo = (ImageView) findViewById(R.id.interiormausoleo);
         cuadrotexto = (ImageView) findViewById(R.id.cuadrotexto);
@@ -87,6 +103,11 @@ public class InteriorMausoleo7 extends AppCompatActivity {
         buttonizquierda.setVisibility(View.INVISIBLE);
         buttonderecha.setVisibility(View.INVISIBLE);
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
         Typewriter txtView2 = findViewById(R.id.type_textWriter);
         txtView2.setCharacterDelay(25); //delay con el que se escriben los caracteres
 
@@ -94,13 +115,20 @@ public class InteriorMausoleo7 extends AppCompatActivity {
         historia.add("El interior está sucio y lleno de telarañas, hacía mucho que nadie entraba aquí.");
         historia.add("Hay un libro encima de una repisa. ¿Lo coges?");
         cogerLibro.add("A ver que es");
+<<<<<<< Updated upstream
         cogerLibro.add("No sé, tiene escritas cosas chungas en latín creo, no entiendo nada, vaya mierda");
         cogerLibro.add("Me llevo el libro");
         cogerLibro.add("Mejor déjalo donde estaba");
+=======
+        cogerLibro.add("No sé tiene escritas cosas chungas en latín creo, no entiendo nada, vaya mierda");
+        cogerLibro.add("Me llevo el libro");
+        cogerLibro.add("Mejor dejalo donde estaba");
+>>>>>>> Stashed changes
         noCogerLibro.add("Aitana coge el libro, empieza a ojearlo.");
         noCogerLibro.add("Está escrito en sánscrito o alguna lengua así, porque latin no es, ¡Como mola!");
         noCogerLibro.add("Nos quedamos el libro");
         noCogerLibro.add("Será mejor dejar el libro donde estaba");
+<<<<<<< Updated upstream
         historia.add("Hay una puerta que conduce a las catacumbas, pero hay dos ¿Cuál escogemos?");
         izquierda.add("Sigue la luz");
         izquierda.add("Lo de seguir las luces nunca sale bien que pueden ser la policía");
@@ -116,6 +144,21 @@ public class InteriorMausoleo7 extends AppCompatActivity {
         derecha.add("Yo estoy con Naila, tira pa dentro");
         derecha.add("¿No os parece raro que apareciera eso después de tocar el libro?");
         derecha.add("");
+=======
+        historia.add("Hay una puerta que conduce a la catacumbas, pero hay dos ¿Cuál escogemos?");
+        izquierda.add("Sigue la luz");
+        izquierda.add("Lo de seguir las luces nunca sale bien que pueden ser la policia");
+        izquierda.add("O las luces de Navidad de Abel Caballero");
+        izquierda.add("A ver dejaros de tonterias ya que estamos aquí habrá que bajar");
+        izquierda.add("Comienzan a bajar las escaleras lentamente, aproximándose a la tenue luz del fondo.");
+        izquierda.add("Podía apreciarse la expresión de terror en los rostros de aquellos muchachos al recorrer el tenebroso pasadizo.");
+        derecha.add("Que coño es eso");
+        derecha.add("Que miedo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        derecha.add("Mira un perro invalido");
+        derecha.add("Vale, después de que firulais casi nos matara del susto habrá que seguir este pasadizo no?");
+        derecha.add("Yo estoy con Naila tira pa dentro");
+        derecha.add("¿No os parece raro que apareciera eso después de tocar el libro?");
+>>>>>>> Stashed changes
 
         fondo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -188,9 +231,21 @@ public class InteriorMausoleo7 extends AppCompatActivity {
                                 personaje.setImageResource(R.drawable.tana);
                             } else if(decision == 1){
                                 aux = derecha;
+<<<<<<< Updated upstream
                                 cuadrotexto.setVisibility(View.VISIBLE);
                                 personaje.setVisibility(View.VISIBLE);
                                 personaje.setImageResource(R.drawable.sustonaila);
+=======
+                                videoView.setVisibility(View.VISIBLE);
+                                videoView.setVideoURI(uri);
+                                videoView.start();
+
+                                /*
+                                cuadrotexto.setVisibility(View.VISIBLE);
+                                personaje.setVisibility(View.VISIBLE);
+                                personaje.setImageResource(R.drawable.sustonaila);
+                                */
+>>>>>>> Stashed changes
 
                             }
                             break;
@@ -200,8 +255,11 @@ public class InteriorMausoleo7 extends AppCompatActivity {
                             if(decision == 0){
                                 personaje.setImageResource(R.drawable.quejicadre);
                             } else if(decision == 1){
+<<<<<<< Updated upstream
                                 personaje.setVisibility(View.VISIBLE);
 
+=======
+>>>>>>> Stashed changes
                                 personaje.setImageResource(R.drawable.sustotana);
                             }
                             break;
@@ -242,10 +300,15 @@ public class InteriorMausoleo7 extends AppCompatActivity {
                             }
                             break;
                         case 13:
+<<<<<<< Updated upstream
                             Intent intent = new Intent(InteriorMausoleo7.this, Pasadizo8.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             intent.putExtra("subidon", subidon);
                             intent.putExtra("cordura", cordura);
+=======
+                            Intent intent = new Intent(InteriorMausoleo7.this, MainActivity2_Final.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+>>>>>>> Stashed changes
                             startActivity(intent);
                             finish();
                             break;
@@ -311,6 +374,7 @@ public class InteriorMausoleo7 extends AppCompatActivity {
                 pasar = true;
                 buttonizquierda.setVisibility(View.INVISIBLE);
                 buttonderecha.setVisibility(View.INVISIBLE);
+<<<<<<< Updated upstream
                 bajaCordura();
                 cordur.setProgress(cordura);
                 videoView.setVisibility(View.VISIBLE);
@@ -318,6 +382,14 @@ public class InteriorMausoleo7 extends AppCompatActivity {
                 videoView.start();
                 txtView2.animatedText("");
                 personaje.setVisibility(View.INVISIBLE);
+=======
+                txtView2.animatedText("Abren la puerta de la derecha");
+                //No deja reproducir el video
+                //videoView.setVisibility(View.VISIBLE);
+                // videoView.setVideoURI(uri);
+                //videoView.start();
+
+>>>>>>> Stashed changes
 
             }
         });
@@ -332,6 +404,7 @@ public class InteriorMausoleo7 extends AppCompatActivity {
             }
         });
 
+<<<<<<< Updated upstream
     }
 
     public static void subeSubidon(){
@@ -376,6 +449,9 @@ public class InteriorMausoleo7 extends AppCompatActivity {
         } else {
             return false;
         }
+=======
+
+>>>>>>> Stashed changes
 
     }
 }
