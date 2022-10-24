@@ -59,7 +59,7 @@ public class ActivityNoVerDinos extends AppCompatActivity {
                             break;
                         case 3:
                             personaje.setImageResource(R.drawable.tana);
-                            txt.animatedText("Habría que haber sido  más amable a saber qué nos pasará ahora.");
+                            txt.animatedText("Habría que haber sido  más amable, a saber qué nos pasará ahora.");
                             contador++;
                             break;
                         case 4:
@@ -78,7 +78,7 @@ public class ActivityNoVerDinos extends AppCompatActivity {
                         case 6:
                             if(decision == 0){
                                 personaje.setImageResource(R.drawable.tanainsultandoadre);
-                                txt.animatedText("Que aburrido.");
+                                txt.animatedText("Qué aburrido.");
                                 contador ++;
                             }else if(decision == 1){
                                 personaje.setImageResource(R.drawable.naila);
@@ -126,7 +126,7 @@ public class ActivityNoVerDinos extends AppCompatActivity {
                 decision = 0;
                 pasar = true;
                 personaje.setImageResource(R.drawable.dre);
-                txt.animatedText(" Vosotras beber si quereis pero yo tengo que conducir luego");
+                txt.animatedText(" Vosotras beber si quereis, pero yo tengo que conducir luego");
             }
         }));
     }

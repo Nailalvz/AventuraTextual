@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.MediaController;
+import android.widget.ProgressBar;
 import android.widget.VideoView;
 
 import java.util.ArrayList;
@@ -28,8 +29,11 @@ public class InteriorMausoleo7 extends AppCompatActivity {
 
     private boolean pasar = true;
 
-    public static int subidon = 0;
-    public static int cordura = 100;
+    public static int subidon;
+    public static int cordura;
+
+    private ProgressBar subid;
+    private ProgressBar cordur;
 
     ArrayList <String> historia = new ArrayList<String>();
     ArrayList <String> cogerLibro = new ArrayList<String>();
@@ -45,10 +49,24 @@ public class InteriorMausoleo7 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interior_mausoleo7);
 
+        //Coger los valores de subidon y cordura del anterior activity
+        Bundle extras = getIntent().getExtras();
+        subidon = extras.getInt("subidon");
+        cordura = extras.getInt("cordura");
+
         //Video
         videoView = (VideoView) findViewById(R.id.videoView);
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.zuzto);
         videoView.setVisibility(View.INVISIBLE);
+
+        //Progress bar Subidon
+        subid = findViewById(R.id.subidonBar);
+        //Progress bar cordura
+        cordur = findViewById(R.id.corduraBar);
+
+        //Ponemos las ProgressBar con el progreso del anterior activity
+        subid.setProgress(subidon);
+        cordur.setProgress(cordura);
 
         //Imagenes
         fondo = (ImageView) findViewById(R.id.interiormausoleo);
@@ -69,8 +87,6 @@ public class InteriorMausoleo7 extends AppCompatActivity {
         buttonizquierda.setVisibility(View.INVISIBLE);
         buttonderecha.setVisibility(View.INVISIBLE);
 
-
-
         Typewriter txtView2 = findViewById(R.id.type_textWriter);
         txtView2.setCharacterDelay(25); //delay con el que se escriben los caracteres
 
@@ -78,26 +94,26 @@ public class InteriorMausoleo7 extends AppCompatActivity {
         historia.add("El interior está sucio y lleno de telarañas, hacía mucho que nadie entraba aquí.");
         historia.add("Hay un libro encima de una repisa. ¿Lo coges?");
         cogerLibro.add("A ver que es");
-        cogerLibro.add("No sé tiene escritas cosas chungas en latín creo, no entiendo nada, vaya mierda");
+        cogerLibro.add("No sé, tiene escritas cosas chungas en latín creo, no entiendo nada, vaya mierda");
         cogerLibro.add("Me llevo el libro");
-        cogerLibro.add("Mejor dejalo donde estaba");
+        cogerLibro.add("Mejor déjalo donde estaba");
         noCogerLibro.add("Aitana coge el libro, empieza a ojearlo.");
         noCogerLibro.add("Está escrito en sánscrito o alguna lengua así, porque latin no es, ¡Como mola!");
         noCogerLibro.add("Nos quedamos el libro");
         noCogerLibro.add("Será mejor dejar el libro donde estaba");
-        historia.add("Hay una puerta que conduce a la catacumbas, pero hay dos ¿Cuál escogemos?");
+        historia.add("Hay una puerta que conduce a las catacumbas, pero hay dos ¿Cuál escogemos?");
         izquierda.add("Sigue la luz");
-        izquierda.add("Lo de seguir las luces nunca sale bien que pueden ser la policia");
+        izquierda.add("Lo de seguir las luces nunca sale bien que pueden ser la policía");
         izquierda.add("O las luces de Navidad de Abel Caballero");
-        izquierda.add("A ver dejaros de tonterias ya que estamos aquí habrá que bajar");
+        izquierda.add("A ver dejaros de tonterías ya que estamos aquí habrá que bajar");
         izquierda.add("Comienzan a bajar las escaleras lentamente, aproximándose a la tenue luz del fondo.");
         izquierda.add("Podía apreciarse la expresión de terror en los rostros de aquellos muchachos al recorrer el tenebroso pasadizo.");
         izquierda.add("");
-        derecha.add("Que coño es eso");
-        derecha.add("Que miedo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        derecha.add("Mira un perro invalido");
-        derecha.add("Vale, después de que firulais casi nos matara del susto habrá que seguir este pasadizo no?");
-        derecha.add("Yo estoy con Naila tira pa dentro");
+        derecha.add("¿Qué coño es eso?");
+        derecha.add("Qué miedo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        derecha.add("Mira un perro inválido");
+        derecha.add("Vale, después de que firulais casi nos matara del susto habrá que seguir este pasadizo, no?");
+        derecha.add("Yo estoy con Naila, tira pa dentro");
         derecha.add("¿No os parece raro que apareciera eso después de tocar el libro?");
         derecha.add("");
 
@@ -172,16 +188,9 @@ public class InteriorMausoleo7 extends AppCompatActivity {
                                 personaje.setImageResource(R.drawable.tana);
                             } else if(decision == 1){
                                 aux = derecha;
-                                /*
-                                videoView.setVisibility(View.VISIBLE);
-                                videoView.setVideoURI(uri);
-                                videoView.start();
-                                  */
-
                                 cuadrotexto.setVisibility(View.VISIBLE);
                                 personaje.setVisibility(View.VISIBLE);
                                 personaje.setImageResource(R.drawable.sustonaila);
-
 
                             }
                             break;
@@ -191,6 +200,8 @@ public class InteriorMausoleo7 extends AppCompatActivity {
                             if(decision == 0){
                                 personaje.setImageResource(R.drawable.quejicadre);
                             } else if(decision == 1){
+                                personaje.setVisibility(View.VISIBLE);
+
                                 personaje.setImageResource(R.drawable.sustotana);
                             }
                             break;
@@ -233,6 +244,8 @@ public class InteriorMausoleo7 extends AppCompatActivity {
                         case 13:
                             Intent intent = new Intent(InteriorMausoleo7.this, Pasadizo8.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.putExtra("subidon", subidon);
+                            intent.putExtra("cordura", cordura);
                             startActivity(intent);
                             finish();
                             break;
@@ -298,12 +311,13 @@ public class InteriorMausoleo7 extends AppCompatActivity {
                 pasar = true;
                 buttonizquierda.setVisibility(View.INVISIBLE);
                 buttonderecha.setVisibility(View.INVISIBLE);
-                //txtView2.animatedText("Abren la puerta de la derecha");
-                //No deja reproducir el video
+                bajaCordura();
+                cordur.setProgress(cordura);
                 videoView.setVisibility(View.VISIBLE);
                 videoView.setVideoURI(uri);
                 videoView.start();
-
+                txtView2.animatedText("");
+                personaje.setVisibility(View.INVISIBLE);
 
             }
         });
@@ -318,7 +332,50 @@ public class InteriorMausoleo7 extends AppCompatActivity {
             }
         });
 
+    }
 
+    public static void subeSubidon(){
+        int valorSubida = (int) (Math.random()*25+1);
+        subidon += valorSubida;
+    }
+
+    public static void bajaSubidon(){
+        int valorBajada = (int) (Math.random()*25+1);
+        if (subidon != 0) {
+            if(subidon < 25){
+                valorBajada = (int) (Math.random()*subidon+1);
+                subidon -= valorBajada;
+            }else{
+                subidon -= valorBajada;
+            }
+        }
+    }
+
+    public static void bajaCordura() {
+        if(cordura > 20){
+            int valorBajada = (int) (Math.random()*30+5); //Si no baja muy poco
+            cordura = cordura - valorBajada;
+        }
+    }
+
+    public static void corduraRandom(){
+        if(bajaCorduraRandom()){
+            int valorBajada = (int) (Math.random()*30+1);
+            cordura = cordura - valorBajada;
+        }
+
+    }
+
+    //Metodo que saca un número entre el uno y el 5 si el número es menor o igual a 3
+    //Entonces la cordura baja y si no se mantiene.
+    public static boolean bajaCorduraRandom(){
+        int baja = (int) (Math.random()*5+1);
+
+        if(baja <= 3){
+            return true;
+        } else {
+            return false;
+        }
 
     }
 }

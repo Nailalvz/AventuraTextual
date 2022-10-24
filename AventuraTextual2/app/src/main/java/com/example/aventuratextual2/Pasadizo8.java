@@ -9,6 +9,7 @@ import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
@@ -23,8 +24,12 @@ public class Pasadizo8 extends AppCompatActivity {
 
     private boolean pasar = true;
 
-    public static int subidon = 0;
-    public static int cordura = 100;
+    public static int subidon;
+    public static int cordura;
+
+    //Progress Bar de subidon y cordura
+    private ProgressBar subid;
+    private ProgressBar cordur;
 
     ArrayList<String> historia = new ArrayList<String>();
     ArrayList<String> verDinos = new ArrayList<String>();
@@ -36,6 +41,19 @@ public class Pasadizo8 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pasadizo8);
+
+        //Coger los valores de subidon y cordura del anterior activity
+        Bundle extras = getIntent().getExtras();
+        subidon = extras.getInt("subidon");
+        cordura = extras.getInt("cordura");
+
+        //Progress bar Subidon
+        subid = findViewById(R.id.subidonBar);
+        //Progress bar cordura
+        cordur = findViewById(R.id.corduraBar);
+
+        subid.setProgress(subidon);
+        cordur.setProgress(cordura);
 
         Typewriter txtView2 = findViewById(R.id.type_textWriter);
         txtView2.setCharacterDelay(25); //delay con el que se escriben los caracteres
@@ -50,7 +68,6 @@ public class Pasadizo8 extends AppCompatActivity {
         beber = (Button) findViewById(R.id.buttonsibeber);
         nobeber = (Button) findViewById(R.id.buttonnobeber);
 
-
         personaje.setVisibility(View.INVISIBLE);
         cuadroTexto.setVisibility(View.INVISIBLE);
         fantasma.setVisibility(View.INVISIBLE);
@@ -63,21 +80,21 @@ public class Pasadizo8 extends AppCompatActivity {
         historia.add("El lugar era húmedo y frío. Había millones de telarañas por las paredes y demasiada suciedad en aquel sitio.");
         historia.add("No me esperaba que esto estuviera tan oscuro");
         historia.add("Como me toque una araña yo me muero");
-        historia.add("YO TAMBIEN, me da igual que haya firulais, ratas o lo que queráis pero ARAÑAS NO...");
-        historia.add("Naila sin quejas que dijiste tu de bajar");
-        historia.add("Si, pero no esperaba que las escaleras dieran a este lugar");
+        historia.add("YO TAMBIÉN, me da igual que haya firulais, ratas o lo que queráis pero ARAÑAS NO...");
+        historia.add("Naila sin quejas que dijiste tÚ de bajar");
+        historia.add("SÍ, pero no esperaba que las escaleras dieran a este lugar");
         historia.add("Está lleno de telarañas. Prefiero que nos aparezca un fantasma que un montón de arañas");
-        historia.add("Ostia puta tanto lo pedias pues ahi lo tienes");
-        historia.add("Que haceis vosotros aqui, ¿venis a ver mis dinosaurios?");
-        historia.add("Que coño dice este");
-        historia.add("Qué, dinosaurios? Venga vamos");
+        historia.add("Ostia puta, tanto lo pedías pues ahí lo tienes");
+        historia.add("Que haceis vosotros aquí, ¿venís a ver mis dinosaurios?");
+        historia.add("¿Qué coño dice este?");
+        historia.add("Qué dinosaurios? Venga, vamos");
         historia.add("...");
         historia.add("Estoy cansada de los dinosaurios");
         historia.add("Shhhhh que no te oiga");
         historia.add("¿Pero queréis verlos o no?");
 
         verDinos.add("Esto va a salir muy mal");
-        verDinos.add("Un fantasma que nos quiere enseñar unos dinosaurios. No se Rick parece falso");
+        verDinos.add("Un fantasma que nos quiere enseñar unos dinosaurios. No sé Rick, parece falso");
         verDinos.add("Vamos Naila, eres una desconfiada");
         verDinos.add("Aitana agarró a Naila del brazo y comenzó a caminar en dirección al fantasma.");
         verDinos.add("Vale, acompáñenme pues");
@@ -195,6 +212,8 @@ public class Pasadizo8 extends AppCompatActivity {
                         case 21:
                             Intent intent = new Intent(Pasadizo8.this, Activity9.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.putExtra("subidon", subidon);
+                            intent.putExtra("cordura", cordura);
                             startActivity(intent);
                             finish();
                             break;
@@ -209,6 +228,7 @@ public class Pasadizo8 extends AppCompatActivity {
             }
         });
 
+        //Ver dinos
         si.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -222,6 +242,7 @@ public class Pasadizo8 extends AppCompatActivity {
             }
         });
 
+        //No ver Dinos
         no.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -229,6 +250,8 @@ public class Pasadizo8 extends AppCompatActivity {
                 pasar = true;
                 si.setVisibility(View.INVISIBLE);
                 no.setVisibility(View.INVISIBLE);
+                bajaCordura();
+                cordur.setProgress(cordura);
                 txtView2.animatedText("Vosotros también sois como los demás, no creeis que haya descubierto un tipo nuevo de dinosaurio");
 
             }
@@ -239,8 +262,11 @@ public class Pasadizo8 extends AppCompatActivity {
             public void onClick(View view) {
                 pasar = true;
                 subeSubidon();
+                subid.setProgress(subidon);
                 Intent intent = new Intent(Pasadizo8.this, Activity9.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("subidon", subidon);
+                intent.putExtra("cordura", cordura);
                 startActivity(intent);
                 finish();
 
@@ -251,15 +277,17 @@ public class Pasadizo8 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 pasar = true;
-                cordura();
+                bajaSubidon();
+                subid.setProgress(subidon);
                 Intent intent = new Intent(Pasadizo8.this, Activity9.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("subidon", subidon);
+                intent.putExtra("cordura", cordura);
                 startActivity(intent);
                 finish();
 
             }
         });
-
     }
 
     public static void subeSubidon(){
@@ -279,8 +307,15 @@ public class Pasadizo8 extends AppCompatActivity {
         }
     }
 
-    public static void cordura(){
-        if(bajaCordura()){
+    public static void bajaCordura() {
+        if(cordura > 20){
+            int valorBajada = (int) (Math.random()*30+5); //Si no baja muy poco
+            cordura = cordura - valorBajada;
+        }
+    }
+
+    public static void corduraRandom(){
+        if(bajaCorduraRandom()){
             int valorBajada = (int) (Math.random()*30+1);
             cordura = cordura - valorBajada;
         }
@@ -289,7 +324,7 @@ public class Pasadizo8 extends AppCompatActivity {
 
     //Metodo que saca un número entre el uno y el 5 si el número es menor o igual a 3
     //Entonces la cordura baja y si no se mantiene.
-    public static boolean bajaCordura(){
+    public static boolean bajaCorduraRandom(){
         int baja = (int) (Math.random()*5+1);
 
         if(baja <= 3){

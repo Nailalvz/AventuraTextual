@@ -52,7 +52,7 @@ public class MainActivity2 extends AppCompatActivity {
                         break;
                     case 1:
                         fondo2.setImageResource(R.drawable.interiorcasa);
-                        txtView2.animatedText("¿Al final hoy se lia?");
+                        txtView2.animatedText("¿Al final hoy se lía?");
                         imagedre.setVisibility(View.VISIBLE);
                         contador++;
                         break;

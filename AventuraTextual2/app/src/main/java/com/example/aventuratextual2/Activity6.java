@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 public class Activity6 extends AppCompatActivity {
     //Declaración de variables
@@ -16,6 +17,12 @@ public class Activity6 extends AppCompatActivity {
     private  boolean pasar = true;
     private Button bsi, bno;
     private int decision = -1;
+
+    private static int subidon;
+    private static int cordura = 100;
+
+    private ProgressBar subid;
+    private ProgressBar cordur;
 
 
     @Override
@@ -29,6 +36,11 @@ public class Activity6 extends AppCompatActivity {
         bno = findViewById(R.id.buttonno);
         bsi = findViewById(R.id.buttonsi);
         texto = findViewById(R.id.textView);
+
+        //Progress bar Subidon
+        subid = findViewById(R.id.subidonBar);
+        //Progress bar cordura
+        cordur = findViewById(R.id.corduraBar);
 
         //Poner los layouts invisible para que solo se vea el fondo
         cuadroTexto.setVisibility(ImageView.INVISIBLE);
@@ -62,12 +74,12 @@ public class Activity6 extends AppCompatActivity {
                             //no
                             if(decision == 0){
                                 personaje.setImageResource(R.drawable.tana);
-                                texto.animatedText("Que no es eso hombre, asi es mas divertido, pero bueno da igual.");
+                                texto.animatedText("Que no es eso hombre, así es mas divertido, pero bueno da igual.");
                                 contador ++;
                                 //si
                             }else if(decision == 1){
                                 personaje.setImageResource(R.drawable.naila);
-                                texto.animatedText("Xandre coge el ron.");
+                                texto.animatedText("Xandre coge el ron");
                                 contador ++;
                             }
                             break;
@@ -75,12 +87,12 @@ public class Activity6 extends AppCompatActivity {
                             //no
                             if(decision == 0){
                                 personaje.setImageResource(R.drawable.naila);
-                                texto.animatedText("Xandre coge el ron.");
+                                texto.animatedText("Xandre coge el ron");
                                 contador ++;
                                 //si
                             }else if(decision == 1){
                                 personaje.setImageResource(R.drawable.quejicadre);
-                                texto.animatedText("Yo nunca me dejo el ron.");
+                                texto.animatedText("Yo nunca me dejo el ron");
                                 contador ++;
                             }
                             break;
@@ -88,15 +100,23 @@ public class Activity6 extends AppCompatActivity {
                             //no
                             if(decision == 0 ){
                                 personaje.setImageResource(R.drawable.quejicadre);
-                                texto.animatedText("Yo nunca me dejo el ron.");
+                                texto.animatedText("Yo nunca me dejo el ron");
                                 contador ++;
                                 //si
                             }else if (decision == 1){
                                 //cambiar intent
+                                personaje.setImageResource(R.drawable.quejicadre);
+                                texto.animatedText("Vamos");
+                                contador ++;
+                                //Descomentar para ver si sigue dando fallo.
+                                /*
                                 Intent intent = new Intent(Activity6.this, InteriorMausoleo7.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                intent.putExtra("subidon", subidon);
+                                intent.putExtra("cordura", cordura);
                                 startActivity(intent);
                                 finish();
+                                 */
                             }
                             break;
 
@@ -104,6 +124,8 @@ public class Activity6 extends AppCompatActivity {
                                 //cambiar intent
                                 Intent intento = new Intent(Activity6.this, InteriorMausoleo7.class);
                                                                 intento.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                                intento.putExtra("subidon", subidon);
+                                                                intento.putExtra("cordura", cordura);
                                                                 startActivity(intento);
                                                                 finish();
                     }
@@ -121,7 +143,9 @@ public class Activity6 extends AppCompatActivity {
                 pasar = true;
                 texto.animatedText("Aitana, no seas miedica no va a pasar nada, vamos.");
                 personaje.setImageResource(R.drawable.quejicadre);
-
+               // Descomentar si queremos que baje
+               // bajaSubidon();
+               // subid.setProgress(subidon);
 
             }
         });
@@ -135,8 +159,55 @@ public class Activity6 extends AppCompatActivity {
                 pasar = true;
                 texto.animatedText("Dale");
                 personaje.setImageResource(R.drawable.quejicadre);
+                subeSubidon();
+                subid.setProgress(subidon);
 
             }
         });
+    }
+
+    public static void subeSubidon(){
+        int valorSubida = (int) (Math.random()*25+1);
+        subidon += valorSubida;
+    }
+
+    public static void bajaSubidon(){
+        int valorBajada = (int) (Math.random()*25+1);
+        if (subidon != 0) {
+            if(subidon < 25){
+                valorBajada = (int) (Math.random()*subidon+1);
+                subidon -= valorBajada;
+            }else{
+                subidon -= valorBajada;
+            }
+        }
+    }
+
+    public static void bajaCordura() {
+        if(cordura > 20){
+            int valorBajada = (int) (Math.random()*30+1);
+            cordura = cordura - valorBajada;
+        }
+    }
+
+    public static void corduraRandom(){
+        if(bajaCorduraRandom()){
+            int valorBajada = (int) (Math.random()*30+1);
+            cordura = cordura - valorBajada;
+        }
+
+    }
+
+    //Metodo que saca un número entre el uno y el 5 si el número es menor o igual a 3
+    //Entonces la cordura baja y si no se mantiene.
+    public static boolean bajaCorduraRandom(){
+        int baja = (int) (Math.random()*5+1);
+
+        if(baja <= 3){
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }

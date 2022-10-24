@@ -65,10 +65,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/orange_button"
-        android:text="ABRIR"
+        android:text="@string/abrir"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:onClick="presionaBoton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.307"
@@ -82,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/purple_button"
-        android:text="PASAR"
+        android:text="@string/pasar"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -101,6 +100,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/puertasuzto"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/subidonBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="174dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
+        android:progressTint="#FF9800"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/corduraBar" />
+
+    <ProgressBar
+        android:id="@+id/corduraBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="174dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:max="100"
+        android:progress="100"
+        android:progressTint="#FF9800"
+        android:scrollbarSize="4dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

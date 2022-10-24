@@ -4,38 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity6">
+    tools:context=".PasilloCalaveras10">
 
     <ImageView
-        android:id="@+id/fondo"
+        android:id="@+id/pasadizocalaveras"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/fondo"
+        android:contentDescription="@string/pasadizocalaveras"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/puertadino" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/pasadizocalaveras"
+        tools:ignore="ImageContrastCheck" />
 
     <ImageView
-        android:id="@+id/cuadrotxt"
+        android:id="@+id/cuadrotexto"
         android:layout_width="685dp"
         android:layout_height="151dp"
         android:contentDescription="@string/cuadrotexto"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/fondo"
+        app:layout_constraintEnd_toEndOf="@+id/pasadizocalaveras"
         app:layout_constraintHorizontal_bias="0.415"
-        app:layout_constraintStart_toStartOf="@id/fondo"
+        app:layout_constraintStart_toStartOf="@+id/pasadizocalaveras"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.944"
         app:srcCompat="@drawable/cuadrotexto" />
 
-
     <com.example.aventuratextual2.Typewriter
-        android:id="@+id/textView"
+        android:id="@+id/type_textWriter"
         android:layout_width="470dp"
         android:layout_height="87dp"
         android:fontFamily="@font/tipografiaportada"
@@ -50,22 +50,33 @@
         app:layout_constraintVertical_bias="0.851" />
 
     <ImageView
-        android:id="@+id/xandre"
+        android:id="@+id/personaje"
         android:layout_width="140dp"
         android:layout_height="150dp"
         android:layout_marginEnd="85dp"
         android:layout_marginBottom="80dp"
         android:contentDescription="@string/personaje"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="@+id/cuadrotxt"
-        app:srcCompat="@drawable/naila" />
+        app:layout_constraintBottom_toBottomOf="@+id/type_textWriter"
+        app:layout_constraintEnd_toEndOf="@+id/cuadrotexto"
+        app:srcCompat="@drawable/tanainsultandoadre" />
+
+    <ImageView
+        android:id="@+id/fantasma"
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginBottom="104dp"
+        android:contentDescription="@string/fantasma"
+        app:layout_constraintBottom_toBottomOf="@+id/type_textWriter"
+        app:layout_constraintStart_toStartOf="@+id/cuadrotexto"
+        app:srcCompat="@drawable/paleontologo" />
 
     <Button
-        android:id="@+id/buttonsi"
+        android:id="@+id/buttonizquierda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/orange_button"
-        android:text="@string/beber"
+        android:text="@string/izquierda"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,15 +84,14 @@
         app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.895"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintVertical_bias="0.895" />
 
     <Button
-        android:id="@+id/buttonno"
+        android:id="@+id/buttonderecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/purple_button"
-        android:text="@string/pasar"
+        android:text="@string/DERECHA"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -89,8 +99,7 @@
         app:layout_constraintHorizontal_bias="0.695"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.895"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintVertical_bias="0.895" />
 
     <ProgressBar
         android:id="@+id/subidonBar"
@@ -118,5 +127,7 @@
         android:scrollbarSize="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

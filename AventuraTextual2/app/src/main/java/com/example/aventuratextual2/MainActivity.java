@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Texto de la fecha
         Typewriter txtView = findViewById(R.id.type_Characters);
-        txtView.setCharacterDelay(100);
+        txtView.setCharacterDelay(60);
         txtView.animatedText("31 de Octubre");
 
         //Timer para que pasados 4 segundos desaparezca la fecha
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     cuadroTexto.setVisibility(View.VISIBLE);
                     String text = historia.get(contador);
                     Typewriter texto = findViewById(R.id.type_textView);
-                    texto.setCharacterDelay(50);
+                    texto.setCharacterDelay(25);
                     texto.animatedText(text);
                     contador++;
                 } else if(contador == 3){

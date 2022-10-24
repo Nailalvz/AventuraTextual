@@ -3,12 +3,13 @@ package com.example.aventuratextual2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.media.MediaPlayer;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.VideoView;
 
 public class Activity9 extends AppCompatActivity {
@@ -21,11 +22,31 @@ public class Activity9 extends AppCompatActivity {
     private boolean pasar = true;
     private VideoView screamer;
 
+    public static int subidon;
+    public static int cordura;
+
+    //Progress Bar de subidon y cordura
+    private ProgressBar subid;
+    private ProgressBar cordur;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_9);
+
+        //Coger los valores de subidon y cordura del anterior activity
+        Bundle extras = getIntent().getExtras();
+        subidon = extras.getInt("subidon");
+        cordura = extras.getInt("cordura");
+
+        //Progress bar Subidon
+        subid = findViewById(R.id.subidonBar);
+        //Progress bar cordura
+        cordur = findViewById(R.id.corduraBar);
+
+        subid.setProgress(subidon);
+        cordur.setProgress(cordura);
 
         Uri uri = Uri.parse("android.resource://" + getPackageName() +"/"+ R.raw.zuzto);
 
@@ -56,7 +77,7 @@ public class Activity9 extends AppCompatActivity {
                             contador ++;
                             break;
                         case 1:
-                            txt.animatedText("Intentan abrirla pero no son capaces.");
+                            txt.animatedText("Intentan abrirla, pero no son capaces.");
                             contador ++;
                             break;
                         case 2:
@@ -106,6 +127,10 @@ public class Activity9 extends AppCompatActivity {
                             if (decision == 0) {
                                 personaje.setImageResource(R.drawable.dre);
                                 txt.animatedText("Pues nada si no entramos chupitazo.");
+                                //En este activity en el guión no pone nada de que sube el subidon pero como pone chupitazo
+                                //Pues lo he añadido
+                                subeSubidon();
+                                subid.setProgress(subidon);
                                 contador++;
                             } else if(decision == 1){
                                 personaje.setImageResource(R.drawable.naila);
@@ -117,17 +142,29 @@ public class Activity9 extends AppCompatActivity {
                             if(decision == 1){
                                 personaje.setVisibility(ImageView.INVISIBLE);
                                 txt.animatedText("Cierran la puerta de golpe dejando al ente dentro.");
+                                contador++;
                             }else if(decision == 0){
                                 personaje.setVisibility(ImageView.VISIBLE);
                                 personaje.setImageResource(R.drawable.tana);
                                 txt.animatedText("valeee");
+                                contador++;
                             }
                             break;
                         case 9:
                             if(decision == 0){
-                                //siguiente activity
+                                Intent intent = new Intent(Activity9.this, PasilloCalaveras10.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                intent.putExtra("subidon", subidon);
+                                intent.putExtra("cordura", cordura);
+                                startActivity(intent);
+                                finish();
                             }else if(decision == 1){
-                                //siguiente acticity
+                                Intent intent = new Intent(Activity9.this, PasilloCalaveras10.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                intent.putExtra("subidon", subidon);
+                                intent.putExtra("cordura", cordura);
+                                startActivity(intent);
+                                finish();
                             }
 
                     }
@@ -142,6 +179,8 @@ public class Activity9 extends AppCompatActivity {
                 ignorar.setVisibility(ImageView.INVISIBLE);
                 decision = 1;
                 pasar = true;
+                bajaCordura();
+                cordur.setProgress(cordura);
                 personaje.setImageResource(R.drawable.dre);
                 txt.animatedText("Olé, vamos a abrirla");
             }
@@ -167,10 +206,54 @@ public class Activity9 extends AppCompatActivity {
                 decision = 0;
                 pasar = true;
                 personaje.setImageResource(R.drawable.naila);
-                txt.animatedText("Yo paso de entrar ahi tengo un mal presentimiento.\n");
+                txt.animatedText("Yo paso de entrar ahí tengo un mal presentimiento.");
             }
         }));
 
+    }
+
+    public static void subeSubidon(){
+        int valorSubida = (int) (Math.random()*10+1);
+        subidon += valorSubida;
+    }
+
+    public static void bajaSubidon(){
+        int valorBajada = (int) (Math.random()*10+1);
+        if (subidon != 0) {
+            if(subidon < 10){
+                valorBajada = (int) (Math.random()*subidon+1);
+                subidon -= valorBajada;
+            }else{
+                subidon -= valorBajada;
+            }
+        }
+    }
+
+    public static void bajaCordura() {
+        if(cordura > 20){
+            int valorBajada = (int) (Math.random()*30+5); //Si no baja muy poco
+            cordura = cordura - valorBajada;
+        }
+    }
+
+    public static void corduraRandom(){
+        if(bajaCorduraRandom()){
+            int valorBajada = (int) (Math.random()*30+1);
+            cordura = cordura - valorBajada;
+        }
+
+    }
+
+    //Metodo que saca un número entre el uno y el 5 si el número es menor o igual a 3
+    //Entonces la cordura baja y si no se mantiene.
+    public static boolean bajaCorduraRandom(){
+        int baja = (int) (Math.random()*5+1);
+
+        if(baja <= 3){
+            return true;
+        } else {
+            return false;
+        }
 
     }
 }

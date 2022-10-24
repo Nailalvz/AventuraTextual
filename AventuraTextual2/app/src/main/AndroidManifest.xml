@@ -13,9 +13,20 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".PasilloCalaveras10"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
             android:name=".Pasadizo8"
             android:exported="false"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden|screenSize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -23,7 +34,8 @@
         <activity
             android:name=".InteriorMausoleo7"
             android:exported="false"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden|screenSize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

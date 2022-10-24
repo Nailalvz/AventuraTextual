@@ -22,6 +22,10 @@
     <string name="mausoleo">mausoleo</string>
     <string name="fantasma">fantasma</string>
     <string name="pasadizo">pasadizo</string>
+    <string name="DERECHA">DERECHA</string>
+    <string name="pasadizocalaveras">pasadizocalaveras</string>
+    <string name="abrir">ABRIR</string>
+    <string name="cuevamarron">cuevamarron</string>
 
 
 </resources>
