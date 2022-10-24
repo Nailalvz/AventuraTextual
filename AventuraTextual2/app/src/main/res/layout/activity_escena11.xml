@@ -4,10 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF9800"
-    android:backgroundTint="#FF9800"
-    tools:context=".cementerio">
-
+    tools:context=".Escena11">
     <ImageView
         android:id="@+id/fondo"
         android:layout_width="match_parent"
@@ -59,12 +56,23 @@
         app:layout_constraintEnd_toEndOf="@+id/cuadrotexto"
         app:srcCompat="@drawable/dre" />
 
+    <ImageView
+        android:id="@+id/npc"
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="100dp"
+        android:contentDescription="@string/npc"
+        app:layout_constraintBottom_toBottomOf="@+id/type_textView"
+        app:layout_constraintStart_toStartOf="@+id/cuadrotexto"
+        app:srcCompat="@drawable/israel" />
+
     <Button
-        android:id="@+id/buttonsi"
+        android:id="@+id/buttonbuena"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/orange_button"
-        android:text="@string/si"
+        android:text="@string/buena"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,11 +84,11 @@
         tools:ignore="TextContrastCheck,DuplicateClickableBoundsCheck" />
 
     <Button
-        android:id="@+id/buttonno"
+        android:id="@+id/buttonmala"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/purple_button"
-        android:text="@string/buttonno"
+        android:text="@string/mala"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -108,11 +116,11 @@
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/buttonmovil"
+        android:id="@+id/buttonnobeber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/purple_button"
-        android:text="@string/movil"
+        android:text="@string/no_beber"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,32 +132,48 @@
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/buttonsi1"
+        android:id="@+id/buttonxandre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/orange_button"
-        android:text="@string/si"
+        android:text="@string/xandre"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.895"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonnaila"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_button"
+        android:text="@string/naila"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.895"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonaitana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_button"
+        android:text="@string/aitana"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.307"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.895"
-        tools:ignore="TextContrastCheck" />
-
-    <Button
-        android:id="@+id/buttonno1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/purple_button"
-        android:text="@string/buttonno"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.695"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.895"
@@ -181,6 +205,5 @@
         android:scrollbarSize="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

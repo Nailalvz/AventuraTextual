@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
@@ -17,12 +18,13 @@ public class cementerio extends AppCompatActivity {
         private ImageView fondo, cuadroTexto, personaje;
     //Botones
         private Button botonsi, botonno, botonbeber, botonmovil, botonsi1, botonno1;
-        //sonidos
+    //sonidos
     MediaPlayer metal, xfile;
     //ints contadores/controladores
         private int contador = 0, escena = 0, contaux = 0, decision = 3;
     //Subidon
         public static int subidon = 0;
+        private ProgressBar subid;
     // pasar controla si se puede pasar de escena tocando el fondo o no
         boolean pasar = true;
     //Arraylist con la historia lineal y según decisiones
@@ -42,6 +44,9 @@ public class cementerio extends AppCompatActivity {
             cuadroTexto = (ImageView) findViewById(R.id.cuadrotexto);
             personaje = (ImageView) findViewById(R.id.personaje);
             personaje.setVisibility(View.INVISIBLE);
+            cuadroTexto.setVisibility(View.INVISIBLE);
+        //Barras
+            subid = findViewById(R.id.subidonBar);
         //Sonidos
             metal = MediaPlayer.create(this,R.raw.metalefecto);
             xfile = MediaPlayer.create(this,R.raw.xfiles);
@@ -62,7 +67,11 @@ public class cementerio extends AppCompatActivity {
 
 
         //HISTORIA
+<<<<<<< Updated upstream
             historia.add("Tu personaje tiene niveles de cordura y de subidón. Si tomas \"malas\" decisiones estas bajarán y subirán respectivamente. No te preocupes porque se pueden recuperar");
+=======
+            historia.add("Tienes niveles de cordura y de subidón representados en las barritas de ariba en el orden correspondiente. Estas bajaran y subiran respectivamente según las decisiones que tomes. No te preocupes porque se pueden recuperar de la misma manera");
+>>>>>>> Stashed changes
             historia.add("");
             historia.add("Es una noche oscura en la que la única luz que ilumina el cielo es la de una brillante luna llena.");
             historia.add("");
@@ -85,7 +94,11 @@ public class cementerio extends AppCompatActivity {
             historia.add("Va, Xandre. Danos tu móvil desbloqueado 5 minutos o bebe");
             historia.add("Va, ahora tú Naila, te reto a entrar al mausoleo.");
             historia.add("Acepto pero primero unos chupitos");
+<<<<<<< Updated upstream
             historia.add("Venga, entremos");
+=======
+            historia.add("Venga entremos");
+>>>>>>> Stashed changes
             historia.add("");
         // MOVIL O BEBER
             movil1.add("Entra ahí y pon (...) y luego (...)");
@@ -102,6 +115,9 @@ public class cementerio extends AppCompatActivity {
                 if (pasar) {
                     //contiene los cambios de visibilidad, controla el contador (en caso de opcion), el array que pasa la historia y las opciones
                     switch (escena) {
+                        case 0:
+                            cuadroTexto.setVisibility(View.VISIBLE);
+                            break;
                         case 1:
                             fondo.setImageResource(R.drawable.cemetary);
                             cuadroTexto.setVisibility(View.INVISIBLE);
@@ -268,6 +284,8 @@ public class cementerio extends AppCompatActivity {
                 }
             }
 
+
+
         });
 
         //botones
@@ -293,6 +311,7 @@ public class cementerio extends AppCompatActivity {
                     personaje.setImageResource(R.drawable.quejicadre);
                     texto.animatedText("Trae la Santa Teresa");
                     subeSubidon();
+                    subid.setProgress(subidon);
                 }
             });
             //2 beber
@@ -306,6 +325,7 @@ public class cementerio extends AppCompatActivity {
                     personaje.setImageResource(R.drawable.quejicadre);
                     texto.animatedText("Bebo, que no os dejo el móvil que a saber que haceis");
                     subeSubidon();
+                    subid.setProgress(subidon);
                 }
             });
             botonmovil.setOnClickListener(new View.OnClickListener() {
@@ -318,6 +338,7 @@ public class cementerio extends AppCompatActivity {
                     personaje.setImageResource(R.drawable.quejicadre);
                     texto.animatedText("Cogedlo pero no os paseis");
                     bajaSubidon();
+                    subid.setProgress(subidon);
                 }
             });
             //3 beber
@@ -331,6 +352,7 @@ public class cementerio extends AppCompatActivity {
                     personaje.setImageResource(R.drawable.quejicadre);
                     texto.animatedText("Tío es beber o reto, no las dos; luego el alcohólico soy yo");
                     bajaSubidon();
+                    subid.setProgress(subidon);
                 }
             });
             botonsi1.setOnClickListener(new View.OnClickListener() {
@@ -343,6 +365,7 @@ public class cementerio extends AppCompatActivity {
                     personaje.setImageResource(R.drawable.quejicadre);
                     texto.animatedText("Dale que hay que bajar la teresita.");
                     subeSubidon();
+                    subid.setProgress(subidon);
                 }
             });
 
@@ -351,8 +374,8 @@ public class cementerio extends AppCompatActivity {
     public static void subeSubidon(){
         int valorSubida = (int) (Math.random()*10+1);
         subidon += valorSubida;
-    }
 
+    }
     public static void bajaSubidon(){
         int valorBajada = (int) (Math.random()*10+1);
         if (subidon != 0) {
@@ -364,7 +387,6 @@ public class cementerio extends AppCompatActivity {
             }
         }
     }
-
 
 
 }
