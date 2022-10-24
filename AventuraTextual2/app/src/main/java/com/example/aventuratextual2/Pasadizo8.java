@@ -210,12 +210,22 @@ public class Pasadizo8 extends AppCompatActivity {
                             }
                             break;
                         case 21:
-                            Intent intent = new Intent(Pasadizo8.this, Activity9.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            intent.putExtra("subidon", subidon);
-                            intent.putExtra("cordura", cordura);
-                            startActivity(intent);
-                            finish();
+                            if(decision == 1){
+                                Intent intent = new Intent(Pasadizo8.this, VerDinos.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                intent.putExtra("subidon", subidon);
+                                intent.putExtra("cordura", cordura);
+                                startActivity(intent);
+                                finish();
+                            } else if(decision == 0){
+                                Intent intent = new Intent(Pasadizo8.this, ActivityNoVerDinos.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                intent.putExtra("subidon", subidon);
+                                intent.putExtra("cordura", cordura);
+                                startActivity(intent);
+                                finish();
+                            }
+
                             break;
 
                     }

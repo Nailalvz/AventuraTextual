@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class VerDinos extends AppCompatActivity {
 
+
     //Fondo de pantalla, cuadro de texto y personaje
     private ImageView fondo, cuadroTexto, personaje, npc;
     //sonidos
@@ -23,8 +24,8 @@ public class VerDinos extends AppCompatActivity {
     //ints contadores/controladores
     private int contador = 0, escena = 0, contaux = 0, decision = 3;
     //Subidon
-    public static int subidon = 0;
-    private ProgressBar subid;
+    public static int subidon = 0, cordura = 100;
+    private ProgressBar subid, cordur;
     // pasar controla si se puede pasar de escena tocando el fondo o no
     boolean pasar = true;
     //Arraylist con la historia lineal y según decisiones
@@ -36,6 +37,11 @@ public class VerDinos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_dinos);
+        //Coger los valores de subidon y cordura del anterior activity
+        Bundle extras = getIntent().getExtras();
+        subidon = extras.getInt("subidon");
+        cordura = extras.getInt("cordura");
+
         Typewriter texto = findViewById(R.id.type_textView);
         //Imagenes
         fondo = (ImageView) findViewById(R.id.fondo);
@@ -47,6 +53,9 @@ public class VerDinos extends AppCompatActivity {
         cuadroTexto.setVisibility(View.INVISIBLE);
         //Barras
         subid = findViewById(R.id.subidonBar);
+        cordur = findViewById(R.id.corduraBar);
+        subid.setProgress(subidon);
+        cordur.setProgress(cordura);
         //Sonidos
         metal = MediaPlayer.create(this,R.raw.metalefecto);
         xfile = MediaPlayer.create(this,R.raw.xfiles);
@@ -184,8 +193,10 @@ public class VerDinos extends AppCompatActivity {
                             personaje.setImageResource(R.drawable.naila);
                             break;
                         case 20:
-                            Intent intent = new Intent(VerDinos.this, MainActivity2_Final.class);
+                            Intent intent = new Intent(VerDinos.this, Activity9.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.putExtra("subidon", subidon);
+                            intent.putExtra("cordura", cordura);
                             startActivity(intent);
                             finish();
                             break;
@@ -223,5 +234,33 @@ public class VerDinos extends AppCompatActivity {
                 subidon -= valorBajada;
             }
         }
+    }
+
+    public static void bajaCordura() {
+        if(cordura > 20){
+            int valorBajada = (int) (Math.random()*30+1);
+            cordura = cordura - valorBajada;
+        }
+    }
+
+    public static void corduraRandom(){
+        if(bajaCorduraRandom()){
+            int valorBajada = (int) (Math.random()*30+1);
+            cordura = cordura - valorBajada;
+        }
+
+    }
+
+    //Metodo que saca un número entre el uno y el 5 si el número es menor o igual a 3
+    //Entonces la cordura baja y si no se mantiene.
+    public static boolean bajaCorduraRandom(){
+        int baja = (int) (Math.random()*5+1);
+
+        if(baja <= 3){
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }

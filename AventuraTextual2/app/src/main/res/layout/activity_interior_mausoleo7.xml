@@ -10,11 +10,7 @@
         android:id="@+id/interiormausoleo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-<<<<<<< Updated upstream
         android:contentDescription="@string/mausoleo"
-=======
-        android:contentDescription="mausoleo"
->>>>>>> Stashed changes
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,11 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/orange_button"
-<<<<<<< Updated upstream
         android:text="@string/izquierda"
-=======
-        android:text="izquierda"
->>>>>>> Stashed changes
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -121,11 +113,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/purple_button"
-<<<<<<< Updated upstream
         android:text="@string/DERECHA"
-=======
-        android:text="@string/derecha"
->>>>>>> Stashed changes
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -138,19 +126,13 @@
 
     <VideoView
         android:id="@+id/videoView"
-<<<<<<< Updated upstream
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-=======
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
->>>>>>> Stashed changes
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/interiormausoleo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<<<<<<< Updated upstream
     <ProgressBar
         android:id="@+id/subidonBar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
@@ -178,6 +160,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-=======
->>>>>>> Stashed changes
 </androidx.constraintlayout.widget.ConstraintLayout>

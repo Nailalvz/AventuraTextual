@@ -67,11 +67,8 @@ public class cementerio extends AppCompatActivity {
 
 
         //HISTORIA
-<<<<<<< Updated upstream
-            historia.add("Tu personaje tiene niveles de cordura y de subidón. Si tomas \"malas\" decisiones estas bajarán y subirán respectivamente. No te preocupes porque se pueden recuperar");
-=======
+
             historia.add("Tienes niveles de cordura y de subidón representados en las barritas de ariba en el orden correspondiente. Estas bajaran y subiran respectivamente según las decisiones que tomes. No te preocupes porque se pueden recuperar de la misma manera");
->>>>>>> Stashed changes
             historia.add("");
             historia.add("Es una noche oscura en la que la única luz que ilumina el cielo es la de una brillante luna llena.");
             historia.add("");
@@ -94,11 +91,7 @@ public class cementerio extends AppCompatActivity {
             historia.add("Va, Xandre. Danos tu móvil desbloqueado 5 minutos o bebe");
             historia.add("Va, ahora tú Naila, te reto a entrar al mausoleo.");
             historia.add("Acepto pero primero unos chupitos");
-<<<<<<< Updated upstream
             historia.add("Venga, entremos");
-=======
-            historia.add("Venga entremos");
->>>>>>> Stashed changes
             historia.add("");
         // MOVIL O BEBER
             movil1.add("Entra ahí y pon (...) y luego (...)");
@@ -268,6 +261,7 @@ public class cementerio extends AppCompatActivity {
                         case 26:
                             Intent intent = new Intent(cementerio.this, Activity6.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.putExtra("subidon", subidon);
                             startActivity(intent);
                             finish();
                             break;

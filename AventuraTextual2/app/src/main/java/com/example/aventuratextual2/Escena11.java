@@ -24,7 +24,7 @@ public class Escena11 extends AppCompatActivity {
     private int contador = 0, escena = 0, contaux = 0, decision = 3;
     //Subidon
     public static int subidon = 0, cordura = 40;
-    private ProgressBar subid, cord;
+    private ProgressBar subid, cordur;
     // pasar controla si se puede pasar de escena tocando el fondo o no
     boolean pasar = true;
     //Arraylist con la historia lineal y según decisiones
@@ -45,6 +45,11 @@ public class Escena11 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escena11);
+        //Coger los valores de subidon y cordura del anterior activity
+        Bundle extras = getIntent().getExtras();
+        subidon = extras.getInt("subidon");
+        cordura = extras.getInt("cordura");
+
         Typewriter texto = findViewById(R.id.type_textView);
         //Imagenes
         fondo = (ImageView) findViewById(R.id.fondo);
@@ -56,7 +61,9 @@ public class Escena11 extends AppCompatActivity {
         cuadroTexto.setVisibility(View.INVISIBLE);
         //Barras
         subid = findViewById(R.id.subidonBar);
-        cord = findViewById(R.id.corduraBar);
+        cordur = findViewById(R.id.corduraBar);
+        subid.setProgress(subidon);
+        cordur.setProgress(cordura);
         //Sonidos
         siuu = MediaPlayer.create(this,R.raw.siuu);
         //Botones
@@ -84,7 +91,7 @@ public class Escena11 extends AppCompatActivity {
         historia.add("Espero que estén porque no quiero volver a entrar en el mausoleo.");
         historia.add("");
         historia.add("Ves estaban aquí.");
-        historia.add("Cogen las llaves y se escucha un “SUUUUUUUUUUUU”");
+        historia.add("Cogen las llaves y se escucha un sonido fantamagórico.");
         historia.add("Qué coño fue eso.");
         historia.add("Che pibes soy Israel.");
         historia.add("Te voy a llamar Palestina.");
@@ -319,8 +326,11 @@ public class Escena11 extends AppCompatActivity {
                                 //naila
                                 personaje.setImageResource(R.drawable.happynaila);
                             }else if (decision == 1){
+                                //cambiar a escena coche
                                 Intent intent = new Intent(Escena11.this, MainActivity2_Final.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                intent.putExtra("subidon", subidon);
+                                intent.putExtra("cordura", cordura);
                                 startActivity(intent);
                                 finish();
                             }
@@ -389,6 +399,8 @@ public class Escena11 extends AppCompatActivity {
                                 //cambiar a escena coche
                                 Intent intento = new Intent(Escena11.this, MainActivity2_Final.class);
                                 intento.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                intento.putExtra("subidon", subidon);
+                                intento.putExtra("cordura", cordura);
                                 startActivity(intento);
                                 finish();
                             }
@@ -397,6 +409,8 @@ public class Escena11 extends AppCompatActivity {
                         case 32:
                             Intent intenta = new Intent(Escena11.this, MainActivity2_Final.class);
                             intenta.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intenta.putExtra("subidon", subidon);
+                            intenta.putExtra("cordura", cordura);
                             startActivity(intenta);
                             finish();
                             break;
@@ -457,7 +471,7 @@ public class Escena11 extends AppCompatActivity {
                 personaje.setVisibility(View.VISIBLE);
                 npc.setVisibility(View.INVISIBLE);
                 subid.setProgress(subidon);
-                cord.setProgress(cordura);
+                cordur.setProgress(cordura);
             }
         });
         botonnobeber.setOnClickListener(new View.OnClickListener() {
@@ -539,6 +553,7 @@ public class Escena11 extends AppCompatActivity {
             }
         }
     }
+
     public static void bajaCordura() {
         if(cordura > 20){
             int valorBajada = (int) (Math.random()*30+1);

@@ -138,7 +138,7 @@ public class PasilloCalaveras10 extends AppCompatActivity {
                                     finish();
                                 }
                             } else if (decision == 0){
-                                Intent intent = new Intent(PasilloCalaveras10.this, MainActivity2_Final.class);
+                                Intent intent = new Intent(PasilloCalaveras10.this, Escena11.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 intent.putExtra("subidon", subidon);
                                 intent.putExtra("cordura", cordura);

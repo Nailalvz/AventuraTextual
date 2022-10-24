@@ -108,15 +108,13 @@ public class Activity6 extends AppCompatActivity {
                                 personaje.setImageResource(R.drawable.quejicadre);
                                 texto.animatedText("Vamos");
                                 contador ++;
-                                //Descomentar para ver si sigue dando fallo.
-                                /*
                                 Intent intent = new Intent(Activity6.this, InteriorMausoleo7.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 intent.putExtra("subidon", subidon);
                                 intent.putExtra("cordura", cordura);
                                 startActivity(intent);
                                 finish();
-                                 */
+
                             }
                             break;
 
