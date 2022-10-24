@@ -93,7 +93,7 @@ public class Activity6 extends AppCompatActivity {
                                 //si
                             }else if (decision == 1){
                                 //cambiar intent
-                                Intent intent = new Intent(Activity6.this, MainActivity2_Final.class);
+                                Intent intent = new Intent(Activity6.this, InteriorMausoleo7.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                                 finish();
@@ -102,7 +102,7 @@ public class Activity6 extends AppCompatActivity {
 
                         case 5:
                                 //cambiar intent
-                                Intent intento = new Intent(Activity6.this, MainActivity2_Final.class);
+                                Intent intento = new Intent(Activity6.this, InteriorMausoleo7.class);
                                                                 intento.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                                 startActivity(intento);
                                                                 finish();

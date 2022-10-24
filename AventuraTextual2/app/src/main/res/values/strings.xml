@@ -17,6 +17,11 @@
     <string name="movil">movil</string>
     <string name="pasar">Pasar</string>
     <string name="personaje">personaje</string>
+    <string name="derecha" />
+    <string name="izquierda">izquierda</string>
+    <string name="mausoleo">mausoleo</string>
+    <string name="fantasma">fantasma</string>
+    <string name="pasadizo">pasadizo</string>
 
 
 </resources>

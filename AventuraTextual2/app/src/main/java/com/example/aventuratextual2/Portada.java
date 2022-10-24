@@ -42,7 +42,7 @@ public class Portada extends AppCompatActivity {
             public void onClick(View view) {
                 t.cancel();
                 halloween.stop();
-                Intent intent = new Intent(Portada.this, MainActivity.class);
+                Intent intent = new Intent(Portada.this, InteriorMausoleo7.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }

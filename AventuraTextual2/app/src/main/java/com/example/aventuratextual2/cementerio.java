@@ -86,6 +86,7 @@ public class cementerio extends AppCompatActivity {
             historia.add("Va, ahora tú Naila, te reto a entrar al mausoleo.");
             historia.add("Acepto pero primero unos chupitos");
             historia.add("Venga entremos");
+            historia.add("");
         // MOVIL O BEBER
             movil1.add("Entra ahi y pon (...) y luego (...)");
             movil1.add("Va y ahora (...) JAJAJAJA");
