@@ -91,23 +91,25 @@ public class Pasadizo8 extends AppCompatActivity {
         historia.add("No me esperaba que esto estuviera tan oscuro.");
         historia.add("Como me toque una araña yo me muero.");
         historia.add("YO TAMBIÉN, me da igual que haya firulais, ratas o lo que queráis pero ARAÑAS NO...");
-        historia.add("Naila sin quejas que dijiste tÚ de bajar.");
+        historia.add("Naila sin quejas que dijiste TÚ de bajar.");
         historia.add("SÍ, pero no esperaba que las escaleras dieran a este lugar.");
         historia.add("Está lleno de telarañas. Prefiero que nos aparezca un fantasma que un montón de arañas.");
-        historia.add("Ostia puta, tanto lo pedías pues ahí lo tienes.");
-        historia.add("Que haceis vosotros aquí, ¿venís a ver mis dinosaurios?");
+        historia.add("Hostia puta, tanto lo pedías pues ahí lo tienes.");
+        historia.add("¿Qué haceis vosotros aquí? ¿Venís a ver mis dinosaurios?");
         historia.add("¿Qué coño dice este?");
-        historia.add("Qué, dinosaurios? Venga, vamos.");
+        historia.add("¿Qué, dinosaurios? Venga, vamos.");
         historia.add("(...)");
         historia.add("Estoy cansada de los dinosaurios.");
         historia.add("Shhhhh que no te oiga.");
         historia.add("¿Pero queréis verlos o no?");
+        historia.add("");
 
-        verDinos.add("Esto va a salir muy mal.");
+        verDinos.add("Esto va a salir muuuy mal.");
         verDinos.add("Un fantasma que nos quiere enseñar unos dinosaurios. No sé Rick, parece falso.");
         verDinos.add("Vamos Naila, eres una desconfiada.");
         verDinos.add("Aitana agarró a Naila del brazo y comenzó a caminar en dirección al fantasma.");
         verDinos.add("Vale, acompáñenme pues.");
+        historia.add("");
 
 
         noVerDinos.add("Ay mi bachatasaurio...");
@@ -115,6 +117,7 @@ public class Pasadizo8 extends AppCompatActivity {
         noVerDinos.add("Me da pena, parecía un buen tipo.");
         noVerDinos.add("Que le den se parece a uno de mi clase que es un pajas.");
         noVerDinos.add(" Creo que necesitamos un chupito.");
+        historia.add("");
 
         fondo.setOnClickListener(new View.OnClickListener() {
             @Override

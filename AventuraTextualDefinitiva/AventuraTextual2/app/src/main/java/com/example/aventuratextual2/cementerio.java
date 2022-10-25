@@ -73,11 +73,11 @@ public class cementerio extends AppCompatActivity {
 
         //HISTORIA
 
-            historia.add("Tienes niveles de cordura y de subidón representados en las barritas de arriba en el orden correspondiente. Estas bajaran y subiran respectivamente según las decisiones que tomes. No te preocupes porque se pueden recuperar de la misma manera.");
+            historia.add("Tienes niveles de cordura y de subidón representados en las barritas de arriba en el orden correspondiente. Estas bajaran y subiran respectivamente según las decisiones que tomes. No te preocupes porque se pueden recuperar de la misma manera");
             historia.add("");
             historia.add("Es una noche oscura en la que la única luz que ilumina el cielo es la de una brillante luna llena.");
             historia.add("");
-            historia.add("No sabía que había luna llena");
+            historia.add("No sabía que había luna llena.");
             historia.add("Le da ambiente a esta noche de Halloween.");
             historia.add("Igual nos pasa algún suceso paranormal esta noche. Quien sabe…");
             historia.add("A mí no me rayes, que yo he venido a pasarlo bien, nada de movidas chungas de brujas del medievo, Naila. Ni de movidas astrológicas o así, que te veo venir Aitana.");

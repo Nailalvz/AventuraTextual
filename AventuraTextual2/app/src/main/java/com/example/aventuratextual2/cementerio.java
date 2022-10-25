@@ -68,36 +68,36 @@ public class cementerio extends AppCompatActivity {
 
         //HISTORIA
 
-            historia.add("Tienes niveles de cordura y de subidón representados en las barritas de ariba en el orden correspondiente. Estas bajaran y subiran respectivamente según las decisiones que tomes. No te preocupes porque se pueden recuperar de la misma manera");
+            historia.add("Tienes niveles de cordura y de subidón representados en las barritas de ariba en el orden correspondiente. Estas bajaran y subiran respectivamente según las decisiones que tomes. No te preocupes porque se pueden recuperar de la misma manera.");
             historia.add("");
             historia.add("Es una noche oscura en la que la única luz que ilumina el cielo es la de una brillante luna llena.");
             historia.add("");
-            historia.add("No sabía que había luna llena");
+            historia.add("No sabía que había luna llena.");
             historia.add("Le da ambiente a esta noche de Halloween.");
             historia.add("Igual nos pasa algún suceso paranormal esta noche. Quien sabe…");
             historia.add("A mí no me rayes, que yo he venido a pasarlo bien, nada de movidas chungas de brujas del medievo, Naila. Ni de movidas astrológicas o así, que te veo venir Aitana.");
             historia.add("Venga chicos haya paz (Joder lo que tengo aguantar) ¿Quién quiere un cubata?");
-            historia.add("Venga sentémonos");
+            historia.add("Venga sentémonos.");
             historia.add("Dale aquí mismo.");
             historia.add("");
             historia.add("Eso encima de una tumba tío, no sé yo si es buena idea.\n");
-            historia.add("No creo que le importe");
+            historia.add("No creo que le importe.");
             historia.add("Xandre se sienta encima de la tumba; Aitana y Naila colocan las cosas cerca en corrillo.");
             historia.add("Ves como no era buena idea JAJAJA");
-            historia.add("Que va, serían las llaves del golfito");
+            historia.add("Que va, serían las llaves del golfito.");
             historia.add("¿Qué os parece si jugamos a prueba o verdad?");
-            historia.add("Mejor a prueba o beber, que si no solo decimos verdad y es un rollo");
-            historia.add("Perfecto, una excusa pa beber. Que esta Santa Teresa hay que bajarla");
-            historia.add("Va, Xandre. Danos tu móvil desbloqueado 5 minutos o bebe");
+            historia.add("Mejor a prueba o beber, que si no solo decimos verdad y es un rollo.");
+            historia.add("Perfecto, una excusa pa beber. Que esta Santa Teresa hay que bajarla.");
+            historia.add("Va, Xandre. Danos tu móvil desbloqueado 5 minutos o bebe.");
             historia.add("Va, ahora tú Naila, te reto a entrar al mausoleo.");
-            historia.add("Acepto pero primero unos chupitos");
-            historia.add("Venga, entremos");
+            historia.add("Acepto pero primero unos chupitos.");
+            historia.add("Venga, entremos.");
             historia.add("");
         // MOVIL O BEBER
             movil1.add("Entra ahí y pon (...) y luego (...)");
             movil1.add("Va y ahora (...) JAJAJAJA");
-            beber1.add("Xandre aburrido");
-            beber1.add("É o que hai");
+            beber1.add("Xandre aburrido.");
+            beber1.add("É o que hai.");
 
 
         fondo.setOnClickListener(new View.OnClickListener() {
@@ -292,7 +292,7 @@ public class cementerio extends AppCompatActivity {
                     botonsi.setVisibility(View.INVISIBLE);
                     botonno.setVisibility(View.INVISIBLE);
                     personaje.setImageResource(R.drawable.quejicadre);
-                    texto.animatedText("Nah ya bebemos en un rato");
+                    texto.animatedText("Nah ya bebemos en un rato.");
                 }
             });
             botonsi.setOnClickListener(new View.OnClickListener() {
@@ -303,7 +303,7 @@ public class cementerio extends AppCompatActivity {
                     botonsi.setVisibility(View.INVISIBLE);
                     botonno.setVisibility(View.INVISIBLE);
                     personaje.setImageResource(R.drawable.quejicadre);
-                    texto.animatedText("Trae la Santa Teresa");
+                    texto.animatedText("Pasa el ron.");
                     subeSubidon();
                     subid.setProgress(subidon);
                 }
@@ -317,7 +317,7 @@ public class cementerio extends AppCompatActivity {
                     botonmovil.setVisibility(View.INVISIBLE);
                     botonbeber.setVisibility(View.INVISIBLE);
                     personaje.setImageResource(R.drawable.quejicadre);
-                    texto.animatedText("Bebo, que no os dejo el móvil que a saber que haceis");
+                    texto.animatedText("Bebo, que no os dejo el móvil que a saber qué haceis.");
                     subeSubidon();
                     subid.setProgress(subidon);
                 }
@@ -330,7 +330,7 @@ public class cementerio extends AppCompatActivity {
                     botonmovil.setVisibility(View.INVISIBLE);
                     botonbeber.setVisibility(View.INVISIBLE);
                     personaje.setImageResource(R.drawable.quejicadre);
-                    texto.animatedText("Cogedlo pero no os paseis");
+                    texto.animatedText("Cogedlo, pero no os paseis.");
                     bajaSubidon();
                     subid.setProgress(subidon);
                 }
@@ -357,7 +357,7 @@ public class cementerio extends AppCompatActivity {
                     botonsi1.setVisibility(View.INVISIBLE);
                     botonno1.setVisibility(View.INVISIBLE);
                     personaje.setImageResource(R.drawable.quejicadre);
-                    texto.animatedText("Dale que hay que bajar la teresita.");
+                    texto.animatedText("Dale, que hay que bajar la teresita.");
                     subeSubidon();
                     subid.setProgress(subidon);
                 }

@@ -63,7 +63,7 @@ public class MainActivity2 extends AppCompatActivity {
                         break;
                     case 3:
                         if(decision == 1){
-                            txtView2.animatedText("Yo también, me parece un planazo");
+                            txtView2.animatedText("Yo también, me parece un planazo.");
                             imagedre.setImageResource(R.drawable.naila);
                             contador++;
                         } else if(decision == 0) {
@@ -75,11 +75,11 @@ public class MainActivity2 extends AppCompatActivity {
                         break;
                     case 4:
                         if(decision == 1){
-                            txtView2.animatedText("Decidido, pillad las cosas que vamos yo os espero en el golfito");
+                            txtView2.animatedText("Decidido, pillad las cosas que vamos yo os espero. en el golfito");
                             imagedre.setImageResource(R.drawable.quejicadre);
                             contador++;
                         } else if(decision == 0){
-                            txtView2.animatedText("Venga dale");
+                            txtView2.animatedText("Venga dale.");
                             imagedre.setImageResource(R.drawable.quejicadre);
                             contador++;
                         }
@@ -114,7 +114,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 botonSi.setVisibility(View.INVISIBLE);
                 botonNo.setVisibility(View.INVISIBLE);
-                txtView2.animatedText("Venga, que yo tengo ganas de hacer algo distinto");
+                txtView2.animatedText("Venga, que yo tengo ganas de hacer algo distinto.");
                 imagedre.setImageResource(R.drawable.tana);
                 decision = 1;
 
@@ -127,7 +127,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 botonSi.setVisibility(View.INVISIBLE);
                 botonNo.setVisibility(View.INVISIBLE);
-                txtView2.animatedText("Buah tío, no sé");
+                txtView2.animatedText("Buah tío, no sé.");
                 imagedre.setImageResource(R.drawable.tana);
                 decision = 0;
             }

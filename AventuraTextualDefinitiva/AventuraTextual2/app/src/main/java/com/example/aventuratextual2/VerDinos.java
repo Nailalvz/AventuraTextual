@@ -1,5 +1,7 @@
 package com.example.aventuratextual2;
 
+import static java.lang.Math.*;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -10,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+
+import com.google.firebase.crashlytics.buildtools.reloc.org.apache.commons.logging.Log;
 
 import java.util.ArrayList;
 // PONER FONDO BACHATOSAURIO Y MUSICA JURASSIC PARK
@@ -47,6 +51,7 @@ public class VerDinos extends AppCompatActivity {
 
         musica = MediaPlayer.create(this, R.raw.jurassicpark);
         musica.start();
+        musica.setVolume((float) 1.0, 0.4F);
         tos = MediaPlayer.create(this, R.raw.tos);
 
         Typewriter texto = findViewById(R.id.type_textView);
@@ -69,7 +74,7 @@ public class VerDinos extends AppCompatActivity {
 
 
         //HISTORIA
-        historia.add("Aquí está mi nuevo descubrimiento !!!!EL BACHATOSAURIO!!!!! PUAJAJAJA *cof cof cof*");
+        historia.add("¡¡¡¡Aquí está mi nuevo descubrimiento!!!! ¡¡¡¡¡EL BACHATOSAURIO!!!!! PUAJAJAJA *cof cof cof*");
         historia.add("Hay que dejar de fumar eh chulo. A todo esto que ganas de un piti especiado.");
         historia.add("Le dijo la sartén al cazo.");
         historia.add("A mi no me empieces con refranes de la prehistoria que ya tengo suficiente con el fantasma este.");
@@ -88,7 +93,7 @@ public class VerDinos extends AppCompatActivity {
         historia.add("Ves como se parece al de mi clase.");
         historia.add("Creo que prefiero las arañas.");
         historia.add("Entonces ese debe ser un genio.");
-        historia.add(" Creo que se está haciendo un poco tarde. Si nos disculpas que se nos enfría la cena.\n");
+        historia.add("Creo que se está haciendo un poco tarde. Si nos disculpas que se nos enfría la cena.\n");
         historia.add("");
 
 
@@ -104,10 +109,13 @@ public class VerDinos extends AppCompatActivity {
                             //fantasma
                             cuadroTexto.setVisibility(View.VISIBLE);
                             npc.setVisibility(View.VISIBLE);
+                            tos.setVolume((float) 1.0, 1.0F);
+                            musica.setVolume((float) 0.4, 0.1F);
                             tos.start();
                             break;
                         case 1:
                             tos.stop();
+                            musica.setVolume((float) 1.0, 1.0F);
                             //xandre
                             personaje.setVisibility(View.VISIBLE);
                             npc.setVisibility(View.INVISIBLE);
@@ -230,15 +238,15 @@ public class VerDinos extends AppCompatActivity {
 
     }
     public static void subeSubidon(){
-        int valorSubida = (int) (Math.random()*10+1);
+        int valorSubida = (int) (random()*10+1);
         subidon += valorSubida;
 
     }
     public static void bajaSubidon(){
-        int valorBajada = (int) (Math.random()*10+1);
+        int valorBajada = (int) (random()*10+1);
         if (subidon != 0) {
             if(subidon < 10){
-                valorBajada = (int) (Math.random()*subidon+1);
+                valorBajada = (int) (random()*subidon+1);
                 subidon -= valorBajada;
             }else{
                 subidon -= valorBajada;
@@ -248,14 +256,14 @@ public class VerDinos extends AppCompatActivity {
 
     public static void bajaCordura() {
         if(cordura > 20){
-            int valorBajada = (int) (Math.random()*30+1);
+            int valorBajada = (int) (random()*30+1);
             cordura = cordura - valorBajada;
         }
     }
 
     public static void corduraRandom(){
         if(bajaCorduraRandom()){
-            int valorBajada = (int) (Math.random()*30+1);
+            int valorBajada = (int) (random()*30+1);
             cordura = cordura - valorBajada;
         }
 
@@ -264,7 +272,7 @@ public class VerDinos extends AppCompatActivity {
     //Metodo que saca un número entre el uno y el 5 si el número es menor o igual a 3
     //Entonces la cordura baja y si no se mantiene.
     public static boolean bajaCorduraRandom(){
-        int baja = (int) (Math.random()*5+1);
+        int baja = (int) (random()*5+1);
 
         if(baja <= 3){
             return true;

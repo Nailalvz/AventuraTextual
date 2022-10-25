@@ -156,7 +156,7 @@ public class Activity9 extends AppCompatActivity {
                             }else if(decision == 0){
                                 personaje.setVisibility(ImageView.VISIBLE);
                                 personaje.setImageResource(R.drawable.tana);
-                                txt.animatedText("valeee..");
+                                txt.animatedText("Vale...");
                                 contador++;
                             }
                             break;

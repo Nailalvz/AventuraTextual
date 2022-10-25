@@ -30,10 +30,12 @@ public class ActivityCoche extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coche);
+        boolean mate;
 
         Bundle extras = getIntent().getExtras();
         subidon = extras.getInt("subidon");
         cordura = extras.getInt("cordura");
+        mate = extras.getBoolean("mate");
 
         fondo = findViewById(R.id.fondoCoche);
         cuadroTexto = findViewById(R.id.cuadrotexto);
@@ -91,6 +93,7 @@ public class ActivityCoche extends AppCompatActivity {
                             personaje.setVisibility(View.INVISIBLE);
                             cajademusica.start();
                             txt.animatedText("Se dirigen al coche de Xandre. Se suben y ponen música.");
+                            contador ++;
                             break;
                         case 4:
                             personaje.setVisibility(ImageView.INVISIBLE);
@@ -100,13 +103,13 @@ public class ActivityCoche extends AppCompatActivity {
                             contador ++;
                             break;
                         case 5:
-                            accidente.stop();
                             personaje.setVisibility(ImageView.VISIBLE);
                             personaje.setImageResource(R.drawable.israel);
                             txt.animatedText("JAJAJA, os caería bien pero el mate ese no era buena idea tomarlo.");
                             contador ++;
                             break;
                         case 6:
+                            accidente.stop();
                             personaje.setVisibility(ImageView.INVISIBLE);
                             txt.animatedText("Por conducir bebidos estaban condenados a deambular por el cementerio toda la eternidad. Quedando atrapados con los fantasmas del cementerio.");
                             contador ++;
@@ -125,15 +128,19 @@ public class ActivityCoche extends AppCompatActivity {
                 }else{
                     switch (contador){
                         case 0:
-                            fondo.setImageResource(R.drawable.coche);
                             cuadroTexto.setVisibility(ImageView.VISIBLE);
                             txt.animatedText("Los muchachos se despiden del fantasma y se dirigen al coche.");
                             contador++;
                             break;
                         case 1:
+                            fondo.setImageResource(R.drawable.coche);
                             personaje.setVisibility(ImageView.VISIBLE);
                             txt.setVisibility(Typewriter.VISIBLE);
-                            txt.animatedText("Ese mate me mato. Yo no estoy para conducir ahora.");
+                            if (mate){
+                                txt.animatedText("Ese mate me mato. Yo no estoy para conducir ahora.");
+                            }else{
+                                txt.animatedText("Ese ron me mato. Yo no estoy para conducir ahora.");
+                            }
                             contador++;
                             break;
                         case 2:
@@ -148,7 +155,7 @@ public class ActivityCoche extends AppCompatActivity {
                             break;
                         case 4:
                             personaje.setImageResource(R.drawable.quejicadre);
-                            txt.animatedText("Como quieras yo voy a sobar, Además está amaneciendo.");
+                            txt.animatedText("Como quieras yo voy a sobar. Además está amaneciendo.");
                             contador ++;
                             break;
                         case 5:

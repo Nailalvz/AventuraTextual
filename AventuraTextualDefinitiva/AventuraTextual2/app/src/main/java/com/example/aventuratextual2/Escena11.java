@@ -345,6 +345,7 @@ public class Escena11 extends AppCompatActivity {
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 intent.putExtra("subidon", subidon);
                                 intent.putExtra("cordura", cordura);
+                                intent.putExtra("mate", false);
                                 startActivity(intent);
                                 finish();
                             }
@@ -416,6 +417,7 @@ public class Escena11 extends AppCompatActivity {
                                 intento.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 intento.putExtra("subidon", subidon);
                                 intento.putExtra("cordura", cordura);
+                                intento.putExtra("mate", true);
                                 startActivity(intento);
                                 finish();
                             }

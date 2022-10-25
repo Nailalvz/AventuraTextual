@@ -79,7 +79,7 @@ public class Activity6 extends AppCompatActivity {
                                 //si
                             }else if(decision == 1){
                                 personaje.setImageResource(R.drawable.naila);
-                                texto.animatedText("Xandre coge el ron");
+                                texto.animatedText("Xandre coge el ron.");
                                 contador ++;
                             }
                             break;
@@ -87,12 +87,12 @@ public class Activity6 extends AppCompatActivity {
                             //no
                             if(decision == 0){
                                 personaje.setImageResource(R.drawable.naila);
-                                texto.animatedText("Xandre coge el ron");
+                                texto.animatedText("Xandre coge el ron.");
                                 contador ++;
                                 //si
                             }else if(decision == 1){
                                 personaje.setImageResource(R.drawable.quejicadre);
-                                texto.animatedText("Yo nunca me dejo el ron");
+                                texto.animatedText("Yo nunca me dejo el ron.");
                                 contador ++;
                             }
                             break;
@@ -100,7 +100,7 @@ public class Activity6 extends AppCompatActivity {
                             //no
                             if(decision == 0 ){
                                 personaje.setImageResource(R.drawable.quejicadre);
-                                texto.animatedText("Yo nunca me dejo el ron");
+                                texto.animatedText("Yo nunca me dejo el ron.");
                                 contador ++;
                                 //si
                             }else if (decision == 1){
@@ -155,7 +155,7 @@ public class Activity6 extends AppCompatActivity {
                 bsi.setVisibility(Button.INVISIBLE);
                 decision = 1;
                 pasar = true;
-                texto.animatedText("Dale");
+                texto.animatedText("Dale.");
                 personaje.setImageResource(R.drawable.quejicadre);
                 subeSubidon();
                 subid.setProgress(subidon);
