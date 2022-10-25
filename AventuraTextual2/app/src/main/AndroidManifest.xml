@@ -13,29 +13,35 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityCoche6"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".PasilloCalaveras10"
-            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
             android:screenOrientation="landscape">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".Pasadizo8"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|keyboardHidden|screenSize">
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".InteriorMausoleo7"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|keyboardHidden|screenSize">
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -108,27 +114,25 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".VerDinos"
-            android:exported="false"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="DuplicateActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
-    <activity
-        android:name=".MainActivity"
-        android:configChanges="orientation|keyboardHidden|screenSize"
-        android:exported="false"
-        android:screenOrientation="landscape">
-        <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
-    </activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".cementerio"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -137,5 +141,3 @@
     </application>
 
 </manifest>
-
-

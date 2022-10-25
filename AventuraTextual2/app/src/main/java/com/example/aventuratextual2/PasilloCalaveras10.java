@@ -124,7 +124,7 @@ public class PasilloCalaveras10 extends AppCompatActivity {
                             //No van estos intents, La aplicación peta y vuelve al principio.
                             if(decision == 1){
                                 if(cordura < 60){
-                                    Intent intent = new Intent(PasilloCalaveras10.this, Final_escena10_Paleontologo.class);
+                                    Intent intent = new Intent(PasilloCalaveras10.this, cementerio.class);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(intent);
                                     finish();

@@ -327,7 +327,7 @@ public class Escena11 extends AppCompatActivity {
                                 personaje.setImageResource(R.drawable.happynaila);
                             }else if (decision == 1){
                                 //cambiar a escena coche
-                                Intent intent = new Intent(Escena11.this, MainActivity2_Final.class);
+                                Intent intent = new Intent(Escena11.this, ActivityCoche.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 intent.putExtra("subidon", subidon);
                                 intent.putExtra("cordura", cordura);
@@ -397,7 +397,7 @@ public class Escena11 extends AppCompatActivity {
 
                             }else{
                                 //cambiar a escena coche
-                                Intent intento = new Intent(Escena11.this, MainActivity2_Final.class);
+                                Intent intento = new Intent(Escena11.this, ActivityCoche.class);
                                 intento.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 intento.putExtra("subidon", subidon);
                                 intento.putExtra("cordura", cordura);
