@@ -291,14 +291,6 @@ public class Pasadizo8 extends AppCompatActivity {
                 pasar = true;
                 subeSubidon();
                 subid.setProgress(subidon);
-                tonytriste.stop();
-                Intent intent = new Intent(Pasadizo8.this, ActivityNoVerDinos.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.putExtra("subidon", subidon);
-                intent.putExtra("cordura", cordura);
-                startActivity(intent);
-                finish();
-
             }
         });
 
@@ -308,14 +300,6 @@ public class Pasadizo8 extends AppCompatActivity {
                 pasar = true;
                 bajaSubidon();
                 subid.setProgress(subidon);
-                tonytriste.stop();
-                Intent intent = new Intent(Pasadizo8.this, ActivityNoVerDinos.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.putExtra("subidon", subidon);
-                intent.putExtra("cordura", cordura);
-                startActivity(intent);
-                finish();
-
             }
         });
     }
