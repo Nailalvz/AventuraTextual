@@ -116,7 +116,7 @@ public class Pasadizo8 extends AppCompatActivity {
         noVerDinos.add("El fantasma del paleontólogo se va cabizbajo y triste.");
         noVerDinos.add("Me da pena, parecía un buen tipo.");
         noVerDinos.add("Que le den se parece a uno de mi clase que es un pajas.");
-        noVerDinos.add(" Creo que necesitamos un chupito.");
+        noVerDinos.add("Creo que necesitamos un chupito.");
         historia.add("");
 
         fondo.setOnClickListener(new View.OnClickListener() {
@@ -290,7 +290,11 @@ public class Pasadizo8 extends AppCompatActivity {
             public void onClick(View view) {
                 pasar = true;
                 subeSubidon();
+                beber.setVisibility(View.INVISIBLE);
+                nobeber.setVisibility(View.INVISIBLE);
                 subid.setProgress(subidon);
+                personaje.setImageResource(R.drawable.tana);
+                txtView2.animatedText("Hace falta, hace falta.");
             }
         });
 
@@ -298,8 +302,12 @@ public class Pasadizo8 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 pasar = true;
+                beber.setVisibility(View.INVISIBLE);
+                nobeber.setVisibility(View.INVISIBLE);
                 bajaSubidon();
                 subid.setProgress(subidon);
+                personaje.setImageResource(R.drawable.tana);
+                txtView2.animatedText("Pfff, ya luego, ahora es mal momento.");
             }
         });
     }

@@ -89,7 +89,7 @@ public class ActivityNoVerDinos extends AppCompatActivity {
                             break;
                         case 3:
                             personaje.setImageResource(R.drawable.tana);
-                            txt.animatedText("Habría que haber sido más amablea, a saber qué nos pasará ahora.");
+                            txt.animatedText("Habría que haber sido más amable, a saber qué nos pasará ahora.");
                             contador++;
                             break;
                         case 4:
@@ -122,14 +122,26 @@ public class ActivityNoVerDinos extends AppCompatActivity {
                                 txt.animatedText("Aburrido no. Responsable.");
                                 contador ++;
                             }else if (decision == 1){
+                                personaje.setImageResource(R.drawable.tana);
+                                txt.animatedText("Sigamos adelante.");
+                                contador ++;
+                            }
+                            break;
+                        case 8:
+                            if(decision == 0){
+                                personaje.setImageResource(R.drawable.tana);
+                                txt.animatedText("Sigamos adelante.");
+                                contador ++;
+                            }else if (decision == 1){
                                 cajademusica.stop();
                                 Intent intnt = new Intent(ActivityNoVerDinos.this, Activity9.class);
                                 intnt.putExtra("subidon", subidon);
                                 intnt.putExtra("cordura", cordura);
                                 startActivity(intnt);
                             }
-                            break;
-                        case 8:
+
+                          break;
+                        case 9:
                             if(decision == 0){
                                 cajademusica.stop();
                                 Intent intnt = new Intent(ActivityNoVerDinos.this, Activity9.class);
@@ -137,6 +149,7 @@ public class ActivityNoVerDinos extends AppCompatActivity {
                                 intnt.putExtra("cordura", cordura);
                                 startActivity(intnt);
                             }
+
                     }
                 }
             }
@@ -152,7 +165,7 @@ public class ActivityNoVerDinos extends AppCompatActivity {
                 subeSubidon();
                 subid.setProgress(subidon);
                 personaje.setImageResource(R.drawable.dre);
-                txt.animatedText("Fooondoooo , Foooondoooo.");
+                txt.animatedText("Fooondoooo , foooondoooo.");
             }
         });
 
